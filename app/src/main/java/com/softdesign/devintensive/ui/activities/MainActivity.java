@@ -9,7 +9,7 @@ import com.softdesign.devintensive.utils.ConstantManager;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static final String TAG = ConstantManager.TAG_PREFIX + "Станислав Баусов";
+    private static final String TAG = ConstantManager.TAG_PREFIX + "Main Activity";
 
     /**
      * Invokes on activity creation.
