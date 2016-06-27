@@ -1,17 +1,334 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
     tools:context=".ui.activities.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"/>
-</RelativeLayout>
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="110dp"
+                android:background="@color/gray"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/rank_et"
+                        style="@style/text.statisticBarNumber"
+                        android:text="5"/>
+
+                    <TextView
+                        style="@style/text.statisticBarText"
+                        android:text="@string/rank"/>
+                </LinearLayout>
+
+                <View style="@style/statisticBarSeparator"/>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/code_lines_number_et"
+                        style="@style/text.statisticBarNumber"
+                        android:text="5"/>
+
+                    <TextView
+                        style="@style/text.statisticBarText"
+                        android:text="@string/code_lines"/>
+                </LinearLayout>
+
+                <View style="@style/statisticBarSeparator"/>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/projects_et"
+                        style="@style/text.statisticBarNumber"
+                        android:text="5"/>
+
+                    <TextView
+                        style="@style/text.statisticBarText"
+                        android:text="@string/projects"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/spacing_small_8"
+                android:layout_marginTop="@dimen/spacing_small_8"
+                android:orientation="horizontal">
+
+                <ImageView
+                    style="@style/icon.left"
+                    android:src="@drawable/ic_call_black_24dp"/>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/size_large_72"
+                    android:layout_marginLeft="@dimen/spacing_medium_32"
+                    android:layout_marginRight="@dimen/spacing_normal_16"
+                    android:layout_weight="1"
+                    android:gravity="bottom"
+                    android:orientation="vertical">
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/phone_et"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:enabled="false"
+                            android:focusable="false"
+                            android:hint="@string/phone"
+                            android:inputType="phone"
+                            android:text="+7 (904) 630-40-91"
+                            android:textColor="@color/black"
+                            android:textColorHint="@color/gray"/>
+                    </android.support.design.widget.TextInputLayout>
+                </LinearLayout>
+
+                <ImageView
+                    style="@style/icon.right"
+                    android:src="@drawable/ic_phone_in_talk_black_24dp"
+                    />
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/line_size"
+                android:layout_marginLeft="@dimen/spacing_larger_72"
+                android:background="@color/gray_light"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/spacing_small_8"
+                android:layout_marginTop="@dimen/spacing_small_8"
+                android:orientation="horizontal">
+
+                <ImageView
+                    style="@style/icon.left"
+                    android:src="@drawable/ic_email_black_24dp"
+                    />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/size_large_72"
+                    android:layout_marginLeft="@dimen/spacing_medium_32"
+                    android:layout_marginRight="@dimen/spacing_normal_16"
+                    android:layout_weight="1"
+                    android:gravity="bottom"
+                    android:orientation="vertical">
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/email_et"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:enabled="false"
+                            android:focusable="false"
+                            android:hint="@string/e_mail"
+                            android:inputType="textEmailAddress"
+                            android:text="stas909@gmail.com"
+                            android:textColor="@color/black"
+                            android:textColorHint="@color/gray"/>
+                    </android.support.design.widget.TextInputLayout>
+                </LinearLayout>
+
+                <ImageView
+                    style="@style/icon.right"
+                    android:src="@drawable/ic_send_black_24dp"/>
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/line_size"
+                android:layout_marginLeft="@dimen/spacing_larger_72"
+                android:background="@color/gray_light"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/spacing_small_8"
+                android:layout_marginTop="@dimen/spacing_small_8"
+                android:orientation="horizontal">
+
+                <ImageView
+                    style="@style/icon.left"
+                    android:src="@drawable/ic_vk_black_24"
+                    />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/size_large_72"
+                    android:layout_marginLeft="@dimen/spacing_medium_32"
+                    android:layout_marginRight="@dimen/spacing_normal_16"
+                    android:layout_weight="1"
+                    android:gravity="bottom"
+                    android:orientation="vertical">
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/vk_et"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:enabled="false"
+                            android:focusable="false"
+                            android:hint="@string/vk_profile"
+                            android:inputType="textWebEditText"
+                            android:text="vk.com/idxxxxxxx"
+                            android:textColor="@color/black"
+                            android:textColorHint="@color/gray"/>
+                    </android.support.design.widget.TextInputLayout>
+                </LinearLayout>
+
+                <ImageView
+                    style="@style/icon.right"
+                    android:src="@drawable/ic_visibility_black_24dp"/>
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/line_size"
+                android:layout_marginLeft="@dimen/spacing_larger_72"
+                android:background="@color/gray_light"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/spacing_small_8"
+                android:layout_marginTop="@dimen/spacing_small_8"
+                android:orientation="horizontal">
+
+                <ImageView
+                    style="@style/icon.left"
+                    android:src="@drawable/ic_github_black"
+                    />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/size_large_72"
+                    android:layout_marginLeft="@dimen/spacing_medium_32"
+                    android:layout_marginRight="@dimen/spacing_normal_16"
+                    android:layout_weight="1"
+                    android:gravity="bottom"
+                    android:orientation="vertical">
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/repository_et"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:enabled="false"
+                            android:focusable="false"
+                            android:hint="@string/repository"
+                            android:inputType="textWebEditText"
+                            android:text="github.com/GreenNun/DevIntensivem"
+                            android:textColor="@color/black"
+                            android:textColorHint="@color/gray"/>
+                    </android.support.design.widget.TextInputLayout>
+                </LinearLayout>
+
+                <ImageView
+                    style="@style/icon.right"
+                    android:src="@drawable/ic_visibility_black_24dp"/>
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/line_size"
+                android:layout_marginLeft="@dimen/spacing_larger_72"
+                android:background="@color/gray_light"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/spacing_small_8"
+                android:layout_marginTop="@dimen/spacing_small_8"
+                android:orientation="horizontal">
+
+                <ImageView
+                    style="@style/icon.left"
+                    android:src="@drawable/ic_account_circle_black_24dp"
+                    />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/spacing_medium_32"
+                    android:layout_marginRight="@dimen/spacing_normal_16"
+                    android:layout_weight="1"
+                    android:gravity="bottom"
+                    android:orientation="vertical">
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/about_et"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:enabled="false"
+                            android:focusable="false"
+                            android:hint="@string/about"
+                            android:inputType="textMultiLine"
+                            android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                            android:textColor="@color/black"
+                            android:textColorHint="@color/gray"/>
+                    </android.support.design.widget.TextInputLayout>
+                </LinearLayout>
+
+                <ImageView
+                    style="@style/icon.right"
+                    android:src="@drawable/ic_visibility_black_24dp"/>
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/line_size"
+                android:layout_marginLeft="@dimen/spacing_larger_72"
+                android:background="@color/gray_light"/>
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+</LinearLayout>
